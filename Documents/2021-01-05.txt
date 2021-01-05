@@ -7,3 +7,8 @@
     and cleared all my confusion regarding same.
     
 4.) Also searched through different commands like git pull,git fork. What actually is the difference between them and how they act.
+
+5.) learned to remove file from stagging are by using git -rm chached <name of file>
+
+6.) also learned different add commands...like by adding "git add *.<extension>" will add only the file with same <extension>
+    also we can add all files by using "-A" suffix
