@@ -1,0 +1,65 @@
+1.)Used the interactive command which shows some basic commands that can be executed in GUI form ...not fully in 
+    GUI form but it provides options that are assigned to particular number and we can directly select the command by 
+    simply just typing the number
+    FOR EG:-
+
+    git commit --interactive gives following result
+
+    *** Commands ***
+        1: status       2: update       3: revert       4: add untracked
+        5: patch        6: diff         7: quit         8: help
+
+    so all we need to do is simply select the number assigned 
+
+2.)As "git status" will produce a little comprehensive output ... to produce a little short output 
+    "git status --short" or "git status -s" will be used 
+
+        $ git status -s
+        AM timepass.txt
+        ?? timepass2.txt
+    
+    here,
+        A --->  new files that have been added to the staging area
+        M --->  Modified file
+        ?? ---> untracked files
+
+3.)Tried different combinations of "git diff"... like "git diff staged" which shows the modification 
+    of files before and after staging. Also --staged and --cached are synonyms
+
+4.)Revised all the commands that i learned till now with posssible different ways and combinations and also,
+    situations
+
+5.)Experimented many ways using "git squash" --> it is basically not a command but as helpful to squash things up
+    What it does is ,Suppose there multiple commits in branch which are not as that important whether it stays 
+    on the history graph or not...git squash is used 
+
+    Eg:-5bdd7db (HEAD -> master) added 123
+        d1ab6b3 prac with squash command
+        282c917 (origin/master) timepass files added
+        5cf9d80 Merge remote-tracking branch 'origin/newbranch'
+        fe9df0b (origin/newbranch) 2d new file
+        4557dd8 Merge remote-tracking branch 'origin/newbranch' merging
+        289e326 commited from branch
+        faa2c43 Create fromsite.txt
+        3d5ea4a this is the main
+    
+    Suppose i want to squash last 3 commits i will write "git rebase -i HEAD~3" (i for making it interactive)
+    it will then open vim editor or default editior ,Then clear the prefix "pick" to "squash" and press enter,
+    It will open a new vim editor ,now mention the commit mssge you want for the combined commit,press enter
+    The result will be the following
+
+        045a01c (HEAD -> master) All three combined
+        5cf9d80 Merge remote-tracking branch 'origin/newbranch'
+        fe9df0b (origin/newbranch) 2d new file
+        4557dd8 Merge remote-tracking branch 'origin/newbranch' merging
+        289e326 commited from branch
+        faa2c43 Create fromsite.txt
+        3d5ea4a this is the main
+
+    As you can see the last three commits are now combined into one huge commit
+    This is how squash works.
+    
+
+
+
+
