@@ -1,0 +1,2 @@
+1.)worked on different styles and patterns of tables in html
+2.)experimented different methods and ways in array javascript
