@@ -1,0 +1,73 @@
+body {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+.testimonial {
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        font-size: .8rem;
+        text-align: center;
+        padding: 0 25rem;
+        margin-top: 1rem;
+    }
+
+    &__sayings {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 20rem;
+        margin-top: 2rem;
+
+
+        &__cont {
+            width: 30%;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+            img {
+
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .desc {
+                font-size: .6rem;
+                margin-top: 1rem;
+            }
+
+            .break {
+                margin: 1rem 0;
+            }
+
+            .name {
+                font-size: .7rem;
+                font-weight: 500;
+            }
+
+            .desig {
+
+                font-size: .55rem;
+            }
+        }
+    }
+}

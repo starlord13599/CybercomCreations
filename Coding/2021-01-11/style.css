@@ -1,0 +1,78 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.testimonial__subtitle {
+  font-size: .8rem;
+  text-align: center;
+  padding: 0 25rem;
+  margin-top: 1rem;
+}
+
+.testimonial__sayings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20rem;
+  margin-top: 2rem;
+}
+
+.testimonial__sayings__cont {
+  width: 30%;
+  text-align: center;
+  padding: 1rem;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.testimonial__sayings__cont img {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.testimonial__sayings__cont .desc {
+  font-size: .6rem;
+  margin-top: 1rem;
+}
+
+.testimonial__sayings__cont .break {
+  margin: 1rem 0;
+}
+
+.testimonial__sayings__cont .name {
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.testimonial__sayings__cont .desig {
+  font-size: .55rem;
+}
+/*# sourceMappingURL=style.css.map */

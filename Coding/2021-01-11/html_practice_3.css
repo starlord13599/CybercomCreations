@@ -1,0 +1,26 @@
+body {
+    box-sizing: border-box;
+}
+
+table,
+tr,
+th,
+td {
+    text-align: center;
+}
+
+.main {
+    border-collapse: collapse;
+    width: 20%;
+    margin: 2rem auto;
+}
+
+.nested th,
+.nested td {
+    padding: 0;
+}
+
+td,
+th {
+    padding: 5px;
+}

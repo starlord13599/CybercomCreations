@@ -5,9 +5,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Practice</title>
+    <style>
+        .table1 td,
+        .table1 tr {
+            padding: 1rem;
+        }
+
+        .table2 {
+            text-align: center;
+        }
+
+        .violet {
+            text-decoration: underline;
+            color: purple;
+        }
+
+        .tc {
+            text-align: center;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
+
+    <table class="table1" border="1">
+        <tr>
+            <td rowspan="3">Page 1</td>
+            <td>Page 3</td>
+        </tr>
+        <tr>
+            <td>Page 4</td>
+        </tr>
+        <tr>
+            <td>Page 5</td>
+        </tr>
+        <tr>
+            <td colspan="2">Page 2</td>
+        </tr>
+    </table>
+    <br>
+    <table class="table2" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Favorite Sports or League</th>
+                <th>Favorite Team</th>
+                <th>Favorite Social Media</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jane Smith</td>
+                <td class="violet">FIFA World Cup Soccer</td>
+                <td class="violet">Brazil</td>
+                <td class="violet">Instagram</td>
+            </tr>
+
+            <tr>
+                <td>Deep Patel</td>
+                <td class="violet">Indian Premier League</td>
+                <td class="violet">Sunrisers Hyderabad</td>
+                <td class="violet">Instagram</td>
+            </tr>
+        <tfoot>
+            <tr>
+                <th>Totals</th>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+    <br>
+    <table class="table3" border="1">
+        <thead>
+            <tr>
+                <th>Heading 1</th>
+                <th>Heading 2</th>
+                <th>Heading 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tc">Cell 1 text</td>
+                <td class="tc" style="width: 6rem;">Cell 2 text A cell 2 text B</td>
+                <td class="tc">Cell 3 text</td>
+            </tr>
+            <tr>
+                <td>a piece of long text on oneline without break</td>
+                <td><em>cell text</em></td>
+                <td>cell text align right</td>
+            </tr>
+            <tr>
+                <td class="tc"><strong>cell text </strong></td>
+                <td></td>
+                <td style=" background: linear-gradient(to right, #3494e6, #ec6ead);">graphic text</td>
+            </tr>
+            <tr>
+                <td colspan="3">Mid-Table heading</td>
+            </tr>
+            <tr>
+                <td>Things to do today</td>
+                <td rowspan="5" class="hi">WEEK 26</td>
+                <td>Monday</td>
+            </tr>
+            <tr class="red">
+                <td>Things to do on Tuesday</td>
+                <td>Tuesday</td>
+            </tr>
+            <tr>
+                <td>Things to do today</td>
+                <td>Wednesday</td>
+            </tr>
+            <tr class="green">
+                <td>Things to do today</td>
+                <td>Thursday</td>
+            </tr>
+            <tr>
+                <td>Stuff to tidy up <i><strong>before the weekend!!!</strong></i></td>
+                <td>Friday</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
     <script src="2021-01-08.js"></script>
 </body>
 
