@@ -1,0 +1,15 @@
+<article> --->	Represents an independent piece of content of a document,
+                such as a blog entry or newspaper article
+<aside>   --->	Represents a piece of content that is only slightly related to the rest of the page.
+<command> --->	Represents a command the user can invoke.
+<footer>  --->	Represents a footer for a section and can contain information about the author,
+                copyright information, et cetera.
+<meter>	  --->  Represents a measurement, such as disk usage.
+<nav>	  --->  Represents a section of the document intended for navigation.
+<progress>--->	Represents a completion of a task, such as downloading or when performing
+                a series of expensive operations.
+<output>  --->	Represents some type of output, such as from a calculation done through scripting.
+<video>   --->  Defines a video file.
+<canvas>  --->  This is used for rendering dynamic bitmap graphics on the fly, such as graphs or games.
+<audio>	  --->  Defines an audio file.
+<embed>   --->  Defines external interactive content or plugin.
