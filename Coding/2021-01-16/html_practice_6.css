@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600;700&display=swap");
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus {
+  margin: 1rem auto;
+  width: 40%;
+}
+
+.contactus__header {
+  text-align: center;
+  padding: 1.5rem 6rem;
+  background-image: url(./images/building.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.contactus__form {
+  padding: 2rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contactus__form__control {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.contactus__form__control i {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.4rem;
+  color: grey;
+}
+
+.contactus__form__control__input {
+  width: 100%;
+  padding: 1rem 2rem 1rem 3rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  outline: none;
+  color: grey;
+  border: 2px solid grey;
+}
+
+.contactus__form__control__input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+  color: grey;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus__form__control__input:-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: grey;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus__form__control__input::-ms-input-placeholder {
+  font-size: 1.2rem;
+  color: grey;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus__form__control__input::placeholder {
+  font-size: 1.2rem;
+  color: grey;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus__form button {
+  width: 40%;
+  margin: 1rem auto;
+  padding: 1rem 2.5rem;
+  border: none;
+  background-color: #541a91;
+  border-radius: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.contactus__form button:active, .contactus__form button:focus {
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=html_practice_6.css.map */

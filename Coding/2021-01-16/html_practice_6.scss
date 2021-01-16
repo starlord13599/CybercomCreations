@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600;700&display=swap');
+
+body {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.contactus {
+    margin: 1rem auto;
+    width: 40%;
+
+
+    &__header {
+        text-align: center;
+        padding: 1.5rem 6rem;
+        background-image: url(./images/building.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+    }
+
+    &__form {
+        padding: 2rem 4rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+
+        &__control {
+            position: relative;
+            margin-top: 1rem;
+
+            i {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 1.4rem;
+                color: grey;
+            }
+
+            &__input {
+                width: 100%;
+                padding: 1rem 2rem 1rem 3rem;
+                font-family: inherit;
+                font-size: 1.2rem;
+                outline: none;
+                color: grey;
+                border: 2px solid grey;
+
+                &::placeholder {
+                    font-size: 1.2rem;
+                    color: grey;
+                    font-family: 'Source Sans Pro', sans-serif;
+                }
+            }
+        }
+
+        button {
+            width: 40%;
+            margin: 1rem auto;
+            padding: 1rem 2.5rem;
+            border: none;
+            background-color: #541a91;
+            border-radius: 2rem;
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+            &:active,
+            &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
