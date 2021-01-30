@@ -1,0 +1,27 @@
+**STARTING WITH PHP**
+-->Start the server of Apache and SQL
+-->All website folders come in xaamp/htdocs folders
+
+-->php with html contains this syntax "<?php?>"
+-->pure php contains this syntax "<?php"
+-->always look out for white space
+
+@@Everything comes under <?php?> tag @@
+
+**VARIABLES**
+-->for declaring variables "$name='Deep' or  $age=22"
+-->for declaring const use CONST PI = 3.14;
+
+**THE SPACESHIP OPERATOR**
+--> $num1 <=> $num2
+        ->1 if left is greater i.e num1
+        ->0 if both are equal
+        ->-1 if right is greater i.e num2
+
+--> to concate to strings use '.' (dot operator)
+
+-->phpinfo() gives details about your php environment
+
+--> require,require_once,include,include_once
+
+-->die() and exit() kills all the code below their declaration
