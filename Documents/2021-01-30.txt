@@ -1,0 +1,8 @@
+***FUNCTIONS***
+
+some built in functions are 
+    -str_replace()
+    -stripos()
+    -str_repeat()
+
+created a simple form submission with GET attribute
