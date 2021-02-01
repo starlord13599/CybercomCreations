@@ -1,0 +1,14 @@
+-->can access variables outside the function using global keyword
+-->str_word_count(string,0/1/2,include)
+            -0 with total count
+            -1 as [index] => value
+            -2 as [position] => value
+            - 'include' includes the word you want count during the count
+-->str_shuffle()
+-->substr(str,<from>,<to>)
+-->str_reverse()
+-->similar_text(str1,str2,stored_value)
+-->htmlentities(),addslashes(),stripslashes
+--> arrays and multi-dimensional arrays , assosiative arrays
+--> the 'time()' is the main ,it contains the result in seconds ... further it can be
+    manipulated by using date(D M Y @ H:i:s)
