@@ -1,0 +1,6 @@
+--> using rand()
+--> using $_SERVER['SCRIPT_NAME']
+                   ['HTTP_HOST']
+header('Location: '. $the_page)
+
+--> $_FILES['name']['name']
