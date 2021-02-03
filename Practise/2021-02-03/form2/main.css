@@ -1,0 +1,9 @@
+table {
+    /* text-align: center; */
+    width: 30%;
+    margin: 1rem auto;
+}
+
+.error {
+    color: red
+}
