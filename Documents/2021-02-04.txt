@@ -1,0 +1,5 @@
+mysqli_connect(localhost,username,password,database)
+to check the error use mysqli_connect_error()
+explode('.',thevariable)
+mysqli_real_escape_string()
+location.php?id=<theid>
