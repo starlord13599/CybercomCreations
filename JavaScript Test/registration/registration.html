@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <h1 id="title">REGISTRATION</h1>
+    <form id="regform">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <label for="confpassword">Confirm Password</label>
+        <input type="password" name="confpassword" id="confpassword">
+
+        <label for="city">Select a City</label>
+        <select name="city" id="city">
+            <option value="Ahemdabad" selected>Ahemdabad</option>
+            <option value="Surat">Surat</option>
+            <option value="Bhavnagar">Bhavnagar</option>
+        </select>
+
+        <label for="state">Select a state</label>
+        <select name="state" id="state">
+            <option value="Gujarat">Gujarat</option>
+            <option value="Maharastra">Maharastra</option>
+        </select>
+
+        <input type="checkbox" name="check" id="check">
+        <label for="check">Terms and Conditions</label>
+
+        <button id="regsubmit" onclick="event.preventDefault(); register()"><a href="">Register</a></button>
+    </form>
+
+    <script src="registration.js"></script>
+</body>
+
+</html>
