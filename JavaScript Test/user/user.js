@@ -28,7 +28,7 @@ function listData(data) {
             cell3.innerHTML = element.email
             cell4.innerHTML = element.password
             cell5.innerHTML = element.birthdate
-            cell6.innerHTML = `<button id='edit' onClick='edit(this)'>Edit</button> <button onClick="delete(this)" id='delete'>Delete</button>`;
+            cell6.innerHTML = `<button id='edit' onClick='edit(this)'>Edit</button> <button onClick="deleteData(this)" id='delete'>Delete</button>`;
 
         });
     }
@@ -115,5 +115,24 @@ function insertData() {
 
         }
     }
+
+}
+
+function deleteData(td) {
+    const user_details = JSON.parse(localStorage.getItem('user_details'));
+    selected = td.parentElement.parentElement
+    let selected_id = selected.querySelector('.id').innerHTML;
+    user_details.forEach((el, ind) => {
+        if (selected_id == el.lastId) {
+            user_details.splice(ind, 1)
+        }
+    });
+    localStorage.setItem('user_details', JSON.stringify(user_details))
+    window.location.reload()
+}
+
+function logout() {
+    localStorage.setItem('admin_logged_in', 'false')
+    window.location.href = '../login.html'
 
 }
