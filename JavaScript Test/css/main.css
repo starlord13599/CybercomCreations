@@ -1,0 +1,18 @@
+.hidden {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.left {
+    flex-basis: 20%;
+    /* background-color: black; */
+}
+
+.right {
+    flex-basis: 80%;
+    /* background-color: blueviolet; */
+}
