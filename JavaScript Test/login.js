@@ -17,15 +17,15 @@ function login() {
 
 
     if (email && password) {
-        if ((email === admin_email) && (password === admin_password)) {
+        if ((email == admin_email) && (password == admin_password)) {
             localStorage.setItem('admin_logged_in', true);
             window.location.href = 'dashboard/dashboard.html'
             // alert('The password you entered is either invalid or you are not registered');
         } else {
 
             user_details.forEach((el) => {
-                if ((email === el.email) && (password === el.password)) {
-                    window.location.href = `./userdash/userdash.html?id=${el.lastId}`
+                if ((email == el.email) && (password == el.password)) {
+                    window.location.href = `./userdash/userdash.html?lastId=${el.lastId}`
                     throw new Error('Kill all the code below me')
                 }
             });
