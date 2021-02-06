@@ -3,8 +3,9 @@ if (localStorage.getItem('admin_logged_in') != 'true') {
     document.querySelector('.container').style.display = 'none';
 } else {
     const username = document.querySelector('#username')
-    let user_name = localStorage.getItem('admim');
-
+    let user_name = localStorage.getItem('admin');
+    p_user_name = JSON.parse(user_name)
+    username.innerHTML = `Hello,${p_user_name.name}`
 }
 
 function listData(data) {
@@ -27,7 +28,7 @@ function listData(data) {
             cell3.innerHTML = element.email
             cell4.innerHTML = element.password
             cell5.innerHTML = element.birthdate
-            cell6.innerHTML = `<button id='edit' onClick='edit(this)'>Edit</button> <button id='delete'>Delete</button>`;
+            cell6.innerHTML = `<button id='edit' onClick='edit(this)'>Edit</button> <button onClick="delete(this)" id='delete'>Delete</button>`;
 
         });
     }
@@ -110,7 +111,6 @@ function insertData() {
 
             user_details.push(t_data)
             localStorage.setItem('user_details', JSON.stringify(user_details))
-            const new_data = localStorage.getItem('user_details')
             window.location.reload()
 
         }
