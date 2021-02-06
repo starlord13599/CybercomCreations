@@ -12,7 +12,7 @@ function login() {
     const admin_password = admin_details ? JSON.parse(admin_details).password1 : null;
 
     const user = localStorage.getItem('user_details') || null;
-    const user_details = JSON.parse(user)
+    const user_details = JSON.parse(user) || [];
 
 
 
