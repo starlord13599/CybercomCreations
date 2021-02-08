@@ -16,3 +16,19 @@
     flex-basis: 80%;
     /* background-color: blueviolet; */
 }
+
+.dumy {
+    width: 30%;
+    margin: 4rem auto;
+    background-color: #f0dbbb;
+}
+
+.btn {
+    background-color: #e8a135;
+}
+
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+
+}
