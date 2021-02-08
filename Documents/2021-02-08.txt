@@ -1,0 +1,12 @@
+-->to start session use session_start()
+--> can store variables in session by $_SESSION['name] = <value to be stored>
+    ....but do not forget to use session_start()
+--> u can unset a single variable by using unset($SESSION['name])
+--> also to clear whole session use session_unset()
+--> setcookie(<the variable>,<expiry time in seconds>)
+
+-->readfile(<file name>)
+--> copy(<from>,<to>)
+-->fopen(<file>,r/w/a/a+) -- opens the file
+,fread() -- reads the file
+,fgets() -- gets the first line
