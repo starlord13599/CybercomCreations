@@ -1,0 +1,16 @@
+The short hand for echo the value in html <?= <variable> ?>
+
+class Name{
+
+public $name = 'Deep'
+public $email = 'deep.patel9593@gmail.com'
+
+public function name(){
+    echo $this->name
+    }
+}
+
+parent::__construct()
+
+get_class_var()
+get_class_methods()
