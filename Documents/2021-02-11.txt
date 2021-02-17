@@ -1,0 +1,27 @@
+1.)is_array()
+2.)in_array() ->> does type check if strict set to TRUE
+            also check for any value not keys in associative array
+3.)array_unique() -->> returns an array while removing redundant data;
+4.)array_search() -->> returns the index or key
+5.)array_revers() -->> reverses the array [keeping the keys intact]
+6.)array_map()-->> runs a callback on every elements of an array
+7.)array_diff()-->> compares one or more arrays and provides only the values present in array one,
+                 that are not in any another arrays.
+8.)min()
+9.)max()
+10.)count()
+11.)array_rand()-->> returns and random key or an index
+12.)count()
+13.)array_count_values()-->> simply counts the one of repeated values
+14.)sort(),rsort()
+15.)asort(),rasort()
+16.)implode()--->> joins the array into a string according to a given condition.
+17.)explode()--->> converts the string into a array according to a given condition.
+18.)array_key_exsists() --->> checks if the key is present in an associative array
+19.)array_keys()--->> allows to see all the keys of the array
+20.)array_values()--->> allows to see all the values of the array
+21.)array_push()--->> allows to push the value into an array
+22.)array_pop()-->> returns an value from the array after removing that value from an array
+23.)array_unshift()-->> prepends the value to the start of an array
+24.)array_shift()-->removes the value from the start of an array
+25.)array_splice()-->> removes an portion of array and replaces it with something else
