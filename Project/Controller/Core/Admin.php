@@ -1,12 +1,70 @@
 <?php
-require_once 'C:\xampp\htdocs\Project\Modal\Core\Request.php';
+Mage::loadFileByClassName('Block_Core_Layout');
 
-class Admin
+class Controller_Core_Admin
 {
-    public $request = null;
+    protected $request = null;
+    protected $layout = null;
+    protected $admin_message = null;
+
     public function __construct()
     {
-        $this->request = new Request();
+        $this->setRequest();
+    }
+
+    public function setLayout(Block_Core_Layout $layout = null)
+    {
+        if (!$layout) {
+
+            $layout = Mage::getBlock('block_core_Layout');
+        }
+        $this->layout = $layout;
+        return $this;
+    }
+
+    public function getLayout()
+    {
+        if (!$this->layout) {
+            $this->setLayout();
+        }
+
+        return $this->layout;
+    }
+
+    public function renderLayout()
+    {
+        echo $this->getLayout()->toHtml();
+    }
+
+
+    public function setMessage()
+    {
+        $this->admin_message = Mage::getModel('model_admin_message');
+        return $this;
+    }
+
+    public function getMessage()
+    {
+        if (!$this->admin_message) {
+            $this->setMessage();
+        }
+
+        return $this->admin_message;
+    }
+
+    public function getRequest()
+    {
+        if (!$this->request) {
+            $this->setRequest();
+        }
+
+        return $this->request;
+    }
+
+    public function setRequest()
+    {
+        $this->request = Mage::getModel('model_core_request');
+        return $this;
     }
 
 
@@ -18,16 +76,16 @@ class Admin
     public function getUrl($controllerName = null, $actionName = null, $params = null, $resetprams = false)
     {
 
-        $final = $_GET;
+        $final = $this->getRequest()->getGet();
         if ($resetprams) {
             $final = [];
         }
 
         if (!$controllerName) {
-            $controllerName = $this->request->getGet('c');
+            $controllerName = $this->getRequest()->getGet('c');
         }
         if (!$actionName) {
-            $actionName = $this->request->getGet('a');
+            $actionName = $this->getRequest()->getGet('a');
         }
 
         $final['a'] = $actionName;

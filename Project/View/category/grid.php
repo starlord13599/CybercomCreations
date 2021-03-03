@@ -1,10 +1,10 @@
 <?php
-require('C:\xampp\htdocs\Project\resources\templates\header.php');
+$categories = $this->getCategories();
 ?>
 
 <div class="d-flex justify-content-between align-items-center">
     <h3 class="display-5">Category List</h3>
-    <a class="btn btn-success" href="<?php echo $this->getUrl(null, 'form') ?>">Create Category</a>
+    <a class="btn btn-success" onclick="mage.setUrl('<?php echo $this->getUrl()->getUrl(null, 'show') ?>').load()" href="javascript:void(0)">Create Category</a>
 </div>
 <table class="table table-striped table-hover">
     <thead>
@@ -17,16 +17,16 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
         </tr>
     </thead>
     <tbody>
-        <?php if ($data) : ?>
-            <?php foreach ($data as $d) : ?>
+        <?php if ($categories) : ?>
+            <?php foreach ($categories as $category) : ?>
                 <tr>
-                    <th scope="row"><?= $d['categoryId'] ?></th>
-                    <td><?= $d['name'] ?></td>
-                    <td><?= $d['status'] ?></td>
-                    <td><?= $d['description'] ?></td>
+                    <th scope="row"><?= $category->categoryId ?></th>
+                    <td><?= $category->name ?></td>
+                    <td><?= $category->status ?></td>
+                    <td><?= $category->description ?></td>
                     <td>
-                        <a class="btn btn-primary" href="<?php echo $this->getUrl(null, 'updateForm', ['id' => $d['categoryId']], false)  ?>">Update</a>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger that" data-bs-whatever="<?php echo htmlspecialchars($d['categoryId']) ?>">Delete</button>
+                        <a class="btn btn-primary" href="<?php echo $this->getUrl()->getUrl(null, 'form', ['id' => $category->categoryId], false)  ?>">Update</a>
+                        <a type="button" class="btn btn-danger that" href="<?php echo $this->getUrl()->getUrl(null, 'delete', ['id' => $category->categoryId], false)  ?>">Delete</a>
                     </td>
                 </tr>
             <?php endforeach ?>
@@ -37,7 +37,7 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
 </table>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -49,14 +49,13 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" id=deleteBtnc data-bs-dismiss="modal" class="btn btn-danger">Delete</button>
+                <button type="button" id=deleteBtn data-bs-dismiss="modal" class="btn btn-danger">Delete</button>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Modal -->
 
 <?php
-require_once('C:\xampp\htdocs\Project\resources\templates\footer.php');
 ?>
-<script src="../../../Project/public/js/category.js"></script>
+<!-- <script src="../../../Project/public/js/category.js"></script> -->

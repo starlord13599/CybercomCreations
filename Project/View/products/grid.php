@@ -1,9 +1,6 @@
-<?php
-require('C:\xampp\htdocs\Project\resources\templates\header.php');
-?>
 <div class="d-flex justify-content-between align-items-center">
     <h3 class="display-5">Product List</h3>
-    <a class="btn btn-success" href="<?php echo $this->getUrl('products', 'form') ?>">Create Product</a>
+    <a class="btn btn-success" onclick="mage.setUrl('<?php echo $this->getUrl()->getUrl('product', 'show') ?>').load()" href="javascript:void(0)">Create Product</a>
 </div>
 <table class="table table-striped table-hover">
     <thead>
@@ -20,20 +17,21 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
         </tr>
     </thead>
     <tbody>
-        <?php if ($data) : ?>
-            <?php foreach ($data as $d) : ?>
+        <?php if ($this->getProducts()) : ?>
+            <?php foreach ($this->getProducts() as $product) : ?>
                 <tr>
-                    <th scope="row"><?= $d['productId'] ?></th>
-                    <td><?= $d['name'] ?></td>
-                    <td><?= $d['price'] ?></td>
-                    <td><?= $d['discount'] ?></td>
-                    <td><?= $d['quantity'] ?></td>
-                    <td><?= $d['description'] ?></td>
-                    <td><?= $d['createdDate'] ?></td>
-                    <td><?= $d['updatedDate'] ?></td>
+
+                    <th scope="row"><?= $product->productId ?></th>
+                    <td><?= $product->name ?></td>
+                    <td><?= $product->price ?></td>
+                    <td><?= $product->discount ?></td>
+                    <td><?= $product->quantity ?></td>
+                    <td><?= $product->description ?></td>
+                    <td><?= $product->createdDate ?></td>
+                    <td><?= $product->updatedDate ?></td>
                     <td>
-                        <a class="btn btn-primary" href="<?php echo $this->getUrl(null, 'updateForm', ['id' => $d['productId']]); ?>">Update</a>
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger that" data-bs-whatever="<?php echo htmlspecialchars($d['productId']) ?>">Delete</button>
+                        <a class="btn btn-primary" href="<?php echo $this->getUrl()->getUrl(null, 'form', ['id' => $product->productId]); ?>"><i class="bi bi-pencil"></i></a>
+                        <a type="button" class="btn btn-danger" href="<?php echo $this->getUrl()->getUrl(null, 'delete', ['id' => $product->productId]); ?>"><i class="bi bi-trash-fill"></i></a>
                     </td>
                 </tr>
 
@@ -45,7 +43,7 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
 </table>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -61,10 +59,6 @@ require('C:\xampp\htdocs\Project\resources\templates\header.php');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Modal -->
-
-<?php
-require_once('C:\xampp\htdocs\Project\resources\templates\footer.php');
-?>
-<script src="../../../Project/public/js/product.js"></script>
+<!-- <script src="../../../Project/public/js/product.js"></script> -->
