@@ -12,9 +12,9 @@ const powerController = {
 
   // to save data
   async postData(req, res) {
-    const { heroId, primaryPower, secondaryPower, utility } = req.body;
-    const Power = await power.create({
-      heroId,
+    const { primaryPower, secondaryPower, utility } = req.body.powers;
+
+    const Power = await power.build({
       primaryPower,
       secondaryPower,
       utility,

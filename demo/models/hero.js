@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ power, team, villan, faught }) {
-      this.hasMany(power, { foreignKey: "heroId" });
+      this.hasOne(power, { foreignKey: "heroId" });
       this.belongsTo(team);
       this.belongsToMany(villan, { through: faught });
     }
@@ -17,7 +17,14 @@ module.exports = (sequelize, DataTypes) => {
   hero.init(
     {
       name: DataTypes.STRING,
-      age: DataTypes.INTEGER,
+      age: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: {
+            msg: "Age  must be a number",
+          },
+        },
+      },
       place: DataTypes.STRING,
       teamId: DataTypes.INTEGER,
     },

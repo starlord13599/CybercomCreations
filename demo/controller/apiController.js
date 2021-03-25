@@ -3,24 +3,41 @@ const { hero, power, team, villan, faught } = require("../models");
 const apiControllers = {
   //to display data
   async showData(req, res) {
-    const Hero = await hero.findAll({ include: [power, team, villan] });
+    try {
+      const Hero = await hero.findAll({ include: [power] });
 
-    return res.json({
-      hero: Hero,
-    });
+      return res.json(Hero);
+    } catch (error) {
+      res.send(error.message);
+    }
   },
 
   // to save data
   async postData(req, res) {
-    const { name, age, place, teamId } = req.body;
-    const Hero = await hero.create({
-      name,
-      age,
-      place,
-      teamId,
-    });
+    const { name, age, place, teamId } = req.body.heros;
+    let hero_id = req.query.id;
+    console.log(hero_id);
+    try {
+      const Hero = await hero.upsert({ id: hero_id, name, age, place, teamId });
 
-    res.json(Hero);
+      if (req.body.powers && Object.keys(req.body.powers).length !== 0) {
+        const { primaryPower, secondaryPower, utility } = req.body.powers;
+        await Hero.createPower({ primaryPower, secondaryPower, utility });
+        const powers = await Hero.getPower({ raw: true });
+      }
+
+      if (req.body.villans && Object.keys(req.body.villans).length !== 0) {
+        console.log(req.body.villans);
+        const villans = await villan.bulkCreate(req.body.villans);
+        console.log(villans);
+        await Hero.addVillans(villans);
+      }
+
+      // res.json(Hero);
+      res.send(Hero);
+    } catch (error) {
+      res.json(error.message);
+    }
   },
 
   //to update data

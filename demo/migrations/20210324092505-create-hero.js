@@ -13,8 +13,11 @@ module.exports = {
         allowNull: false,
       },
       age: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
+        isInt: {
+          msg: "Age should only be a number",
+        },
       },
       place: {
         type: Sequelize.STRING,

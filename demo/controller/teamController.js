@@ -30,11 +30,9 @@ const teamController = {
       let { name, status } = req.body;
       let Team = await team.findByPk(id);
 
-      if (!Team) {
-        throw "Team was not found";
-      }
+      console.log(await Team.countHeros({ raw: true }));
 
-      Team = await Team.update({ name, status }, { where: { id: id } });
+      // Team = await Team.update({ name, status }, { where: { id: id } });
 
       return res.json(Team);
     } catch (error) {
