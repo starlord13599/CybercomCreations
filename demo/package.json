@@ -15,7 +15,9 @@
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.1",
-    "umzug": "^2.3.0"
+    "to": "^0.2.9",
+    "umzug": "^2.3.0",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

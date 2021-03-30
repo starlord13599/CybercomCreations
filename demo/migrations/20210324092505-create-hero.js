@@ -15,9 +15,6 @@ module.exports = {
       age: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        isInt: {
-          msg: "Age should only be a number",
-        },
       },
       place: {
         type: Sequelize.STRING,

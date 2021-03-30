@@ -20,7 +20,7 @@ app.listen(PORT, async () => {
     .authenticate()
     .then(() => {
       console.log("Connected to database");
-      console.log(`SERVER RUNNING AT ${PORT}`);
+      console.log(`SERVER RUNNING AT  http://localhost:${PORT}`);
     })
     .catch((err) => {
       console.log(err.message);

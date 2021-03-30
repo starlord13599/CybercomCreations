@@ -4,7 +4,18 @@ const apiControllers = {
   //to display data
   async showData(req, res) {
     try {
-      const Hero = await hero.findAll({ include: [power] });
+      const Hero = await hero.findAll({
+        include: [
+          {
+            model: villan,
+            through: { attributes: [] },
+          },
+          {
+            model: power,
+            as: "battle",
+          },
+        ],
+      });
 
       return res.json(Hero);
     } catch (error) {
@@ -16,7 +27,7 @@ const apiControllers = {
   async postData(req, res) {
     const { name, age, place, teamId } = req.body.heros;
     let hero_id = req.query.id;
-    console.log(hero_id);
+
     try {
       const Hero = await hero.upsert({ id: hero_id, name, age, place, teamId });
 
@@ -29,7 +40,6 @@ const apiControllers = {
       if (req.body.villans && Object.keys(req.body.villans).length !== 0) {
         console.log(req.body.villans);
         const villans = await villan.bulkCreate(req.body.villans);
-        console.log(villans);
         await Hero.addVillans(villans);
       }
 
