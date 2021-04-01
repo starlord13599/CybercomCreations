@@ -1,0 +1,16 @@
+[
+	{
+		"method": "get",
+		"url": "/",
+		"globalMiddlewares": "['isLogedIn','all other global middlewares']",
+		"middlewares": "['all local middleware goes here']",
+		"controller": "test.showData"
+	},
+	{
+		"method": "post",
+		"url": "/save",
+		"globalMiddlewares": "['isLogedIn','all other global middlewares']",
+		"middlewares": "['all local middleware goes here']",
+		"controller": "test.postData"
+	}
+]
