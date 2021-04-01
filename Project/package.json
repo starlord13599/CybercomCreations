@@ -20,8 +20,10 @@
 		"morgan": "^1.10.0",
 		"mysql2": "^2.2.5",
 		"portastic": "^1.0.1",
-		"prompt-confirm": "^2.0.4",
 		"sequelize": "^6.6.2",
 		"umzug": "^2.3.0"
+	},
+	"devDependencies": {
+		"prompt-confirm": "^2.0.4"
 	}
 }

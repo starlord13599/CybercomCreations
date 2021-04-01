@@ -3,9 +3,11 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
+const fs = require('fs');
 const chalk = require('chalk');
 const confirm = require('prompt-confirm');
 const ejsLayout = require('express-ejs-layouts');
+const morgan = require('morgan');
 const { initialize, displayMigrations } = require('./helpers/migrations');
 const { findFreePort } = require('./helpers/port');
 require('./core/connection');
@@ -17,11 +19,23 @@ app.use('/img', express.static(__dirname + 'public/img'));
 app.use('/js', express.static(__dirname + 'public/js'));
 
 //MIDDLEWARE
+app.use(morgan(':remote-addr| :method| :total-time[2] ms| :status| :date[web]'));
 app.use(ejsLayout);
 
 //TEMPLATE ENGINE
 app.set('view engine', 'ejs');
 app.set('layout', './layouts/oneColumn.ejs');
+
+//ROUTES
+app.get('/', (req, res, next) => {
+	fs.readFile('/not-exsists', (err, data) => {
+		if (err) {
+			next(err);
+		}
+		console.log(data);
+	});
+	res.send('HEllo');
+});
 
 //INITIALIZE SERVER
 initialize()

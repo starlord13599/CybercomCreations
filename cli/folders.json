@@ -1,0 +1,35 @@
+[
+	{
+		"folderName": "public",
+		"hasChild": true,
+		"child": "['css','img','js']"
+	},
+	{
+		"folderName": "api",
+		"isFolder": true
+	},
+	{
+		"folderName": "controller",
+		"isFolder": true
+	},
+	{
+		"folderName": "middleware",
+		"isFolder": true
+	},
+	{
+		"folderName": "routes",
+		"isFolder": true
+	},
+	{
+		"folderName": "views",
+		"isFolder": true
+	},
+	{
+		"folderName": "core",
+		"isFolder": true
+	},
+	{
+		"folderName": "helper",
+		"isFolder": true
+	}
+]
