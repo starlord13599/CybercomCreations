@@ -44,10 +44,16 @@ initialize()
 
 		findFreePort()
 			.then(async (freePort) => {
+				let answer = true;
 				if (!(freePort === 3000)) {
-					await new confirm(`Port ${freePort} is available.Do you want to run on port ${freePort}?`).run();
+					answer = await new confirm(
+						`Port ${freePort} is available.Do you want to run on port ${freePort}?`
+					).run();
 				}
 
+				if (!answer) {
+					throw new Error('Cannot start the server');
+				}
 				app.listen(freePort, () => console.log(`Running server on ${freePort}`));
 			})
 			.catch((err) => {
