@@ -1,10 +1,12 @@
 const { sequelize } = require('../db/models');
 
-sequelize
-	.authenticate()
-	.then(() => {
-		console.log('Database connected successfully');
-	})
-	.catch((err) => {
-		console.log(`Database not successfully connected.Error:${err.message}`);
-	});
+async function initializeDatabseConnection() {
+	try {
+		await sequelize.authenticate();
+		return 'Database connection successfully established';
+	} catch (error) {
+		return 'something went wrong while connecting to database';
+	}
+}
+
+module.exports = { initializeDatabseConnection };

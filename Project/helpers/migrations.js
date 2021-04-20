@@ -1,13 +1,29 @@
-const { umzug } = require('../core/migrations.js');
-const confirm = require('prompt-confirm');
+const { umzug } = require('../core/umzug.js');
+const { Toggle } = require('enquirer');
+const { logQuery } = require('../helpers/loggingQuery');
 
-async function initialize() {
+async function checkPendingMigrations() {
+	const logDatabaseQuery = await new Toggle({
+		message: 'Do you want to log database query into a file?',
+		enabled: 'Yes',
+		disabled: 'No'
+	}).run();
+
+	umzug.options.storageOptions.sequelize.options.logging = false;
+	if (logDatabaseQuery) {
+		umzug.options.storageOptions.sequelize.options.logging = logQuery;
+	}
+
 	const migrations = await umzug.pending();
 
 	if (migrations.length == 0) return 'true';
 
 	if (migrations.length > 0) {
-		const answer = await new confirm('Migrations pending..wanna migrate?').run();
+		const answer = await new Toggle({
+			message: 'Migrations pending..wanna migrate?',
+			enabled: 'Yes',
+			disabled: 'No'
+		}).run();
 
 		if (!answer) throw 'Please complete the migrations first';
 
@@ -15,12 +31,4 @@ async function initialize() {
 	}
 }
 
-function displayMigrations(arr) {
-	if (!Array.isArray(arr)) return false;
-
-	arr.forEach((migration) => {
-		console.log(`Mirgrated ${migration.file}`);
-	});
-}
-
-module.exports = { initialize, displayMigrations };
+module.exports = { checkPendingMigrations };

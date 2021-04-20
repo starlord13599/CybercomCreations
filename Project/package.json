@@ -4,28 +4,29 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"dev": "nodemon app.js",
-		"drop-database": "npx sequelize db:drop",
-		"create-database": "npx sequelize db:create",
-		"start": "node app.js"
+		"test": "nodemon test/test.js",
+		"test-doc": "apidoc -i ./test -o ./apidoc"
 	},
-	"author": "Deep Patel",
+	"keywords": [],
+	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"chalk": "^2.4.2",
+		"atocha": "^1.2.2",
+		"chalk": "^4.1.0",
 		"dotenv": "^8.2.0",
 		"ejs": "^3.1.6",
+		"enquirer": "^2.3.6",
 		"express": "^4.17.1",
 		"express-ejs-layouts": "^2.5.0",
+		"lodash": "^4.17.21",
 		"morgan": "^1.10.0",
 		"multer": "^1.4.2",
 		"mysql2": "^2.2.5",
 		"node-cron": "^3.0.0",
 		"portastic": "^1.0.1",
 		"sequelize": "^6.6.2",
+		"swear": "^1.1.0",
 		"umzug": "^2.3.0"
 	},
-	"devDependencies": {
-		"prompt-confirm": "^2.0.4"
-	}
+	"devDependencies": {}
 }
