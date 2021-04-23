@@ -4,8 +4,11 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"test": "nodemon test/test.js",
-		"test-doc": "apidoc -i ./test -o ./apidoc"
+		"test-doc": "apidoc -i ./test -e ./test/apidocs -o ./test/apidocs",
+		"doc": "node core/generateApiDocs.js && apidoc -i ./apidocs/src -o ./apidocs/dest",
+		"src-doc": "apidoc -i ./apidocs/src -o ./apidocs/dest",
+		"test": "npm run test-doc && nodemon test/test.js",
+		"start": "node app.js"
 	},
 	"keywords": [],
 	"author": "",

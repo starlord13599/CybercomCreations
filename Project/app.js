@@ -23,21 +23,21 @@ app.use('/img', express.static(__dirname + 'public/img'));
 app.use('/js', express.static(__dirname + 'public/js'));
 
 //MIDDLEWARE
-app.use(morgan(':remote-addr| :method| :total-time[2] ms| :status| :date[web]'));
+// app.use(morgan(':remote-addr| :method| :total-time[2] ms| :status| :date[web]'));
+app.use(morgan('dev'));
 app.use(ejsLayout);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //TEMPLATE ENGINE
 app.set('view engine', 'ejs');
 app.set('layout', './layouts/oneColumn.ejs');
 
 //ROUTES
-/**
- * @api {get} / To request the dashboard
- */
 getAllRoutes()
 	.then((routes) => {
 		for (const route of routes) {
-			app[route.method](route.url, ...route.middlewares, route.controller);
+			app[route.method](route.url, route.globalMiddlewares, ...route.middlewares, route.controller);
 		}
 	})
 	.catch((err) => {
