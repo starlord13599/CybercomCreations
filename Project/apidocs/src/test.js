@@ -122,3 +122,29 @@
  * 
  * 
  */
+
+//To check an user
+/**
+ * 
+ * @api {patch} /user/:id To patch a user with specific id
+ * @apiName patchs-user
+ * @apiGroup User
+ * 
+ * 
+ * @apiParam  {Number} id Unique <code>id</code> of the user
+ * 
+ * @apiSuccess (200) {json} message The user with <code>id</code> deleted successfully
+ * 
+ * @apiParamExample  {type} Request-Example:
+ * {
+ *     id: 123
+ * }
+ * 
+ * 
+ * @apiSuccessExample {type} Success-Response:
+ * {
+ *     message : The user with <code>id</code> deleted successfully
+ * }
+ * 
+ * 
+ */

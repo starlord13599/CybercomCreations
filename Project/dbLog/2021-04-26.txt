@@ -1,0 +1,4 @@
+2021-04-26T09:07:37.328Z --> Executing (default): SHOW INDEX FROM `SequelizeMeta`
+2021-04-26T09:07:37.344Z --> Executing (default): SELECT `name` FROM `SequelizeMeta` AS `SequelizeMeta` ORDER BY `SequelizeMeta`.`name` ASC;
+2021-04-26T09:07:37.321Z --> Executing (default): CREATE TABLE IF NOT EXISTS `SequelizeMeta` (`name` VARCHAR(255) NOT NULL UNIQUE , PRIMARY KEY (`name`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci;
+2021-04-26T09:07:37.384Z --> Executing (default): SELECT 1+1 AS result
