@@ -19,7 +19,7 @@ async function runServer(done) {
 	return nodemon({
 		script: 'app.js',
 		ignore: [ 'apidocs/dest/*' ],
-		tasks: [ 'genDoc' ],
+		// tasks: [ 'genDoc' ],
 		done: done
 	});
 }

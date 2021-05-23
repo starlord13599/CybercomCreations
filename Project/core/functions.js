@@ -25,10 +25,4 @@ async function walkFunctions() {
 	return true;
 }
 
-// walkFunctions()
-// 	.then((result) => {
-// 		console.log(setup.functions['foo']['bar']['far']['loo']());
-// 	})
-// 	.catch((err) => {});
-
 module.exports = walkFunctions;
